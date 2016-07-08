@@ -1,6 +1,6 @@
 ﻿namespace Caesar___Entschlüsselung
 {
-    partial class Form1
+    partial class Caesar
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Caesar));
             this.lbl_encrypted = new System.Windows.Forms.Label();
             this.box_encrypted = new System.Windows.Forms.RichTextBox();
             this.box_decrypted = new System.Windows.Forms.RichTextBox();
@@ -37,6 +37,10 @@
             this.box_exampleText = new System.Windows.Forms.RichTextBox();
             this.btn_decrypt = new System.Windows.Forms.Button();
             this.lbl_key = new System.Windows.Forms.Label();
+            this.slider_accuracy = new System.Windows.Forms.TrackBar();
+            this.lbl_accuracy_adj = new System.Windows.Forms.Label();
+            this.lbl_accuracy = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.slider_accuracy)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_encrypted
@@ -110,11 +114,40 @@
             this.lbl_key.TabIndex = 7;
             this.lbl_key.Text = "Erkannte Verschiebung: Unbekannt";
             // 
-            // Form1
+            // slider_accuracy
+            // 
+            this.slider_accuracy.Location = new System.Drawing.Point(293, 332);
+            this.slider_accuracy.Name = "slider_accuracy";
+            this.slider_accuracy.Size = new System.Drawing.Size(275, 45);
+            this.slider_accuracy.TabIndex = 8;
+            this.slider_accuracy.Scroll += new System.EventHandler(this.slider_accuracy_Scroll);
+            // 
+            // lbl_accuracy_adj
+            // 
+            this.lbl_accuracy_adj.AutoSize = true;
+            this.lbl_accuracy_adj.Location = new System.Drawing.Point(293, 316);
+            this.lbl_accuracy_adj.Name = "lbl_accuracy_adj";
+            this.lbl_accuracy_adj.Size = new System.Drawing.Size(200, 13);
+            this.lbl_accuracy_adj.TabIndex = 9;
+            this.lbl_accuracy_adj.Text = "Übereinstimmungs Value Anpassung: 0.0";
+            // 
+            // lbl_accuracy
+            // 
+            this.lbl_accuracy.AutoSize = true;
+            this.lbl_accuracy.Location = new System.Drawing.Point(293, 292);
+            this.lbl_accuracy.Name = "lbl_accuracy";
+            this.lbl_accuracy.Size = new System.Drawing.Size(150, 13);
+            this.lbl_accuracy.TabIndex = 10;
+            this.lbl_accuracy.Text = "Übereinstimmungs Value: 0.01";
+            // 
+            // Caesar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 432);
+            this.Controls.Add(this.lbl_accuracy);
+            this.Controls.Add(this.lbl_accuracy_adj);
+            this.Controls.Add(this.slider_accuracy);
             this.Controls.Add(this.lbl_key);
             this.Controls.Add(this.btn_decrypt);
             this.Controls.Add(this.box_exampleText);
@@ -126,8 +159,9 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(595, 471);
             this.MinimumSize = new System.Drawing.Size(595, 471);
-            this.Name = "Form1";
+            this.Name = "Caesar";
             this.Text = "Caesar Entschlüsselung";
+            ((System.ComponentModel.ISupportInitialize)(this.slider_accuracy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +177,9 @@
         private System.Windows.Forms.RichTextBox box_exampleText;
         private System.Windows.Forms.Button btn_decrypt;
         private System.Windows.Forms.Label lbl_key;
+        private System.Windows.Forms.TrackBar slider_accuracy;
+        private System.Windows.Forms.Label lbl_accuracy_adj;
+        private System.Windows.Forms.Label lbl_accuracy;
     }
 }
 
